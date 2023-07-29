@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_500"
+    tools:context=".ui.QuizQuestionsActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/general_knowledge_quiz"
+        android:textColor="@color/grey_500"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionIndicatorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:text="@string/question_indicator_text" />
+
+    <TextView
+        android:id="@+id/dashOne"
+        android:layout_width="50dp"
+        android:layout_height="5dp"
+        android:background="@drawable/gray_dash"
+        app:layout_constraintStart_toStartOf="@id/questionIndicatorText"
+        app:layout_constraintTop_toBottomOf="@id/questionIndicatorText" />
+
+    <TextView
+        android:id="@+id/dashTwo"
+        android:layout_width="50dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/gray_dash"
+        app:layout_constraintBottom_toBottomOf="@id/dashOne"
+        app:layout_constraintStart_toEndOf="@id/dashOne"
+        app:layout_constraintTop_toTopOf="@id/dashOne" />
+
+    <TextView
+        android:id="@+id/dashThree"
+        android:layout_width="50dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/gray_dash"
+        app:layout_constraintBottom_toBottomOf="@id/dashTwo"
+        app:layout_constraintStart_toEndOf="@id/dashTwo"
+        app:layout_constraintTop_toTopOf="@id/dashTwo" />
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashOne"
+        tools:text="Which version of Android introduced the 'Material Design' language for user interfaces, emphasizing a clean and modern design aesthetic?" />
+
+    <RadioGroup
+        android:id="@+id/questionRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:animateLayoutChanges="true"
+        android:checkedButton="@id/firstAnswerRadioButton"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionText">
+
+        <RadioButton
+            android:id="@+id/firstAnswerRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/radio_button_background"
+            android:checked="true"
+            android:padding="16dp"
+            android:buttonTint="@color/white"
+            android:textColor="@color/grey_500"
+            android:textSize="18sp"
+            tools:text="Android 2.3 (Gingerbread)" />
+
+        <RadioButton
+            android:id="@+id/secondAnswerRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/radio_button_background"
+            android:padding="16dp"
+            android:buttonTint="@color/white"
+            android:textColor="@color/grey_500"
+            android:textSize="18sp"
+            tools:text="Android 4.4 (KitKat)" />
+
+        <RadioButton
+            android:id="@+id/thirdAnswerRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/radio_button_background"
+            android:padding="16dp"
+            android:buttonTint="@color/white"
+            android:textColor="@color/grey_500"
+            android:textSize="18sp"
+            tools:text="Android 5.0 (Lollipop)" />
+
+        <RadioButton
+            android:id="@+id/fourthAnswerRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:buttonTint="@color/white"
+            android:background="@drawable/radio_button_background"
+            android:padding="16dp"
+            android:textColor="@color/grey_500"
+            android:textSize="18sp"
+            tools:text="Android 6.0 (Marshmallow)" />
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="16dp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/quitGameText" />
+
+    <TextView
+        android:id="@+id/quitGameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:drawablePadding="4dp"
+        android:padding="10dp"
+        android:text="@string/quit_quiz"
+        android:textColor="@color/grey"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/ic_quit"
+        app:drawableTint="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@id/nextButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/nextButton"
+        app:layout_constraintVertical_bias="0.391" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
